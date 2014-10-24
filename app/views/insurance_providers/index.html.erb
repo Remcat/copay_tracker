@@ -1,0 +1,35 @@
+<h1>List of Insurance Providers</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Insurance Company</th>
+      <th>Member Identification</th>
+      <th>Copay Amount</th>
+      <th>Effective On</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @insurance_providers.each do |provider| %>
+      <tr>
+        <td><%= provider.client.first_name %></td>
+        <td><%= provider.name %></td>
+        <td><%= provider.member_id %></td>
+        <td><%= provider.copay %></td>
+        <td><%= provider.effective_on %></td>
+        <td><%= link_to 'Show', provider %></td>
+        <td><%= link_to 'Edit', edit_insurance_provider_path(provider) %></td>
+        <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insurance provider', new_insurance_provider_path %>

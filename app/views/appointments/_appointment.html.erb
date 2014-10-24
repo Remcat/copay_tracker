@@ -1,0 +1,11 @@
+
+      <tr>
+        <td><%= appointment.client.first_name %></td>
+        <td><%= appointment.occured_on %></td>
+        <td><%= appointment.start.strftime("%I:%M %P") %></td>
+        <td><%= appointment.end.strftime("%I:%M %P") %></td>
+        <td><%= appointment.copay_received %></td>
+        <td><%= link_to 'Show', appointment %></td>
+        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>

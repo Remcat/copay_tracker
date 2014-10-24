@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  client_id: 1
+  occured_on: 2013-10-08
+  start: 2013-10-08 16:15:40
+  end: 2013-10-08 16:15:40
+  copay_received: false
+
+two:
+  client_id: 1
+  occured_on: 2013-10-08
+  start: 2013-10-08 16:15:40
+  end: 2013-10-08 16:15:40
+  copay_received: false

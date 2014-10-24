@@ -1,0 +1,14 @@
+
+
+  <tbody>
+    
+	 <td><%= client.first_name %></td>
+	 <td><%= client.last_name %></td>
+	 <td><%= client.insurance_providers.order('effective_on DESC').first.copay %></td>
+	 <td><%= client.insurance_providers.order('effective_on DESC').first.effective_on %></td>
+	 <td><%= link_to 'Show', client %></td>
+	 <td><%= link_to 'Edit', edit_client_path(client) %></td>
+	 <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  </tbody>
+    

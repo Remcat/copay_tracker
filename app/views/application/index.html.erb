@@ -1,0 +1,30 @@
+<h3>Search Appointments</h3>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:paid, "Search for:") %>
+  <%= label_tag(:paid, "Copay Received?", :class => "checkbox inline") %>
+  <%= check_box_tag(:paid) %> <br>
+  <%= label_tag(:effective_on, "Appointment Occurred On or After:", :class => "checkbox inline") %>
+  <%= date_field_tag(:effective_on) %> <br>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Occured on</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Copay received</th>
+    </tr>
+  </thead>
+
+<%= will_paginate @unpaids, :class => 'digg_pagination' %>
+  <tbody>
+    <%= render @unpaids %>
+  </tbody>
+</table>
+
+<%= will_paginate @unpaids, :class => 'digg_pagination' %>

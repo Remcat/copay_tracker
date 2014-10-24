@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @appointment.client_id %>
+</p>
+
+<p>
+  <strong>Occured on:</strong>
+  <%= @appointment.occured_on %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @appointment.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @appointment.end %>
+</p>
+
+<p>
+  <strong>Copay received:</strong>
+  <%= @appointment.copay_received %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

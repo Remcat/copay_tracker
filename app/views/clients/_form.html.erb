@@ -1,0 +1,21 @@
+<%= simple_form_for(@client) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= hidden_field_tag :user_id, current_user.id  %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.fields_for :insurance_providers do |provider| %>
+      <%= provider.input :name, label: 'Insurance provider' %>
+      <%= provider.input :member_id, label: 'Member ID' %>
+      <%= provider.input :copay, as: :integer %>
+      <%= provider.input :effective_on, as: :date  %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+

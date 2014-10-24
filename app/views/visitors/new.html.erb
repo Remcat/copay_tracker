@@ -1,0 +1,25 @@
+<h3>Home</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Occured on</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Copay received</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unpaids.each do |appointment| %>
+      <tr>
+        <td><%= appointment.client.first_name %></td>
+        <td><%= appointment.occured_on %></td>
+        <td><%= appointment.start.strftime("%I:%M %P") %></td>
+        <td><%= appointment.end.strftime("%I:%M %P") %></td>
+        <td><%= appointment.copay_received %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<%= simple_form_for(@insurance_provider) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  </div>
+
+  <div class="form-actions">
+    <%= f.association :client, label_method: lambda { |c| "#{c.first_name} #{c.last_name}" }, collection: current_user.clients, input_html: { class: 'client_select' }  %>
+    <%= f.input :name, label: 'Insurance Provider' %>
+    <%= f.input :member_id, label: 'Member ID' %>
+    <%= f.input :copay, label: 'Copay Amount' %>
+    <%= f.input :effective_on %>
+    <%= f.button :submit, 'Update' %>
+  </div>
+<% end %>
