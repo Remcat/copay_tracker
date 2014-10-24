@@ -14,5 +14,6 @@ Dev::Application.routes.draw do
 
   match '/search', 	to: 'application#index',	via: 'get',		as: 'search'
 
-  root :to => 'sessions#new'
+  root :to => 'welcome#index'
+  #root :to => 'sessions#new'
 end
